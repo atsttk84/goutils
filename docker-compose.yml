@@ -1,0 +1,13 @@
+#https://docs.docker.com/compose/compose-file/#compose-file-structure-and-examples
+version: "3"
+services:
+  goapp:
+    image: golang:alpine
+    environment:
+      - GO111MODULE=on
+    working_dir: /go/src/github.com/atsttk84/goutils
+    volumes:
+      - .:/go/src/github.com/atsttk84/goutils
+    tty: true
+    security_opt:
+      - "seccomp=unconfined" # for debug
