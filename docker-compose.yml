@@ -7,6 +7,7 @@ services:
       - GO111MODULE=on
     working_dir: /go/src/github.com/atsttk84/goutils
     volumes:
+      - ./docker/init.sh:/init.sh:ro
       - .:/go/src/github.com/atsttk84/goutils
     tty: true
     security_opt:
