@@ -3,26 +3,46 @@ goarch: amd64
 pkg: github.com/atsttk84/goutils/mutex
 cpu: Intel(R) Core(TM) i7-8559U CPU @ 2.70GHz
 BenchmarkUnSafeCounter
-BenchmarkUnSafeCounter-2   	123378201	         9.548 ns/op
-BenchmarkUnSafeCounter-2   	100000000	        10.91 ns/op
-BenchmarkUnSafeCounter-2   	125082655	         9.552 ns/op
+BenchmarkUnSafeCounter-2            	126849541	         9.590 ns/op
+BenchmarkUnSafeCounter-2            	124871290	        10.96 ns/op
+BenchmarkUnSafeCounter-2            	121603515	         9.506 ns/op
 BenchmarkSafeCounter
-BenchmarkSafeCounter-2     	49362279	        24.78 ns/op
-BenchmarkSafeCounter-2     	45401677	        24.83 ns/op
-BenchmarkSafeCounter-2     	48259320	        24.57 ns/op
+BenchmarkSafeCounter-2              	44106660	        23.63 ns/op
+BenchmarkSafeCounter-2              	48311953	        25.43 ns/op
+BenchmarkSafeCounter-2              	50098292	        23.33 ns/op
 BenchmarkAbTest100
-BenchmarkAbTest100-2       	 8266237	       142.4 ns/op
-BenchmarkAbTest100-2       	 7722856	       143.9 ns/op
-BenchmarkAbTest100-2       	 8203153	       144.4 ns/op
+BenchmarkAbTest100-2                	 8475571	       135.4 ns/op
+BenchmarkAbTest100-2                	 8642511	       136.3 ns/op
+BenchmarkAbTest100-2                	 8586297	       136.1 ns/op
 BenchmarkAbTest10000
-BenchmarkAbTest10000-2     	19998350	        57.24 ns/op
-BenchmarkAbTest10000-2     	20658147	        56.56 ns/op
-BenchmarkAbTest10000-2     	21563012	        55.58 ns/op
+BenchmarkAbTest10000-2              	20115182	        55.59 ns/op
+BenchmarkAbTest10000-2              	20701815	        56.55 ns/op
+BenchmarkAbTest10000-2              	20346242	        55.95 ns/op
 BenchmarkAbTest100000
-BenchmarkAbTest100000-2    	18245751	        60.36 ns/op
-BenchmarkAbTest100000-2    	15881155	        72.27 ns/op
-BenchmarkAbTest100000-2    	16946575	        60.29 ns/op
+BenchmarkAbTest100000-2             	20252581	        60.24 ns/op
+BenchmarkAbTest100000-2             	20101263	        60.30 ns/op
+BenchmarkAbTest100000-2             	20473152	        58.94 ns/op
 BenchmarkAbTest1000000
-BenchmarkAbTest1000000-2   	19108161	        59.14 ns/op
-BenchmarkAbTest1000000-2   	18353782	        59.03 ns/op
-BenchmarkAbTest1000000-2   	18440818	        72.69 ns/op
+BenchmarkAbTest1000000-2            	20649199	        58.12 ns/op
+BenchmarkAbTest1000000-2            	20632792	        60.07 ns/op
+BenchmarkAbTest1000000-2            	17145312	        59.27 ns/op
+BenchmarkSafeCounterGoroutine
+BenchmarkSafeCounterGoroutine-2     	 4785622	       247.8 ns/op
+BenchmarkSafeCounterGoroutine-2     	 4640920	       249.3 ns/op
+BenchmarkSafeCounterGoroutine-2     	 4896184	       245.5 ns/op
+BenchmarkAbTest100Goroutine
+BenchmarkAbTest100Goroutine-2       	 2549413	       457.5 ns/op
+BenchmarkAbTest100Goroutine-2       	 2128454	       492.4 ns/op
+BenchmarkAbTest100Goroutine-2       	 2560558	       504.5 ns/op
+BenchmarkAbTest10000Goroutine
+BenchmarkAbTest10000Goroutine-2     	 3648283	       341.0 ns/op
+BenchmarkAbTest10000Goroutine-2     	 3542206	       343.6 ns/op
+BenchmarkAbTest10000Goroutine-2     	 3359632	       345.5 ns/op
+BenchmarkAbTest100000Goroutine
+BenchmarkAbTest100000Goroutine-2    	 3564060	       320.6 ns/op
+BenchmarkAbTest100000Goroutine-2    	 3558303	       322.5 ns/op
+BenchmarkAbTest100000Goroutine-2    	 3685174	       339.6 ns/op
+BenchmarkAbTest1000000Goroutine
+BenchmarkAbTest1000000Goroutine-2   	 3718467	       340.9 ns/op
+BenchmarkAbTest1000000Goroutine-2   	 2737281	       386.6 ns/op
+BenchmarkAbTest1000000Goroutine-2   	 3150487	       419.2 ns/op

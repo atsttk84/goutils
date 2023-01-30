@@ -31,7 +31,6 @@ func BenchmarkUnSafeCounter(b *testing.B) {
 	}
 }
 
-
 func BenchmarkSafeCounter(b *testing.B) {
 	sc := SafeCounter{v: make(map[int]int)}
 	for i := 0; i < b.N; i++ {
@@ -64,5 +63,40 @@ func BenchmarkAbTest1000000(b *testing.B) {
 	ab := AbTest{r: 5, t: 1000000, c: make(map[int]int), l: make(map[int][]int)}
 	for i := 0; i < b.N; i++ {
 		ab.Draw(1)
+	}
+}
+
+func BenchmarkSafeCounterGoroutine(b *testing.B) {
+	sc := SafeCounter{v: make(map[int]int)}
+	for i := 0; i < b.N; i++ {
+		go sc.Draw(1)
+	}
+}
+
+func BenchmarkAbTest100Goroutine(b *testing.B) {
+	ab := AbTest{r: 5, t: 100, c: make(map[int]int), l: make(map[int][]int)}
+	for i := 0; i < b.N; i++ {
+		go ab.Draw(1)
+	}
+}
+
+func BenchmarkAbTest10000Goroutine(b *testing.B) {
+	ab := AbTest{r: 5, t: 10000, c: make(map[int]int), l: make(map[int][]int)}
+	for i := 0; i < b.N; i++ {
+		go ab.Draw(1)
+	}
+}
+
+func BenchmarkAbTest100000Goroutine(b *testing.B) {
+	ab := AbTest{r: 5, t: 100000, c: make(map[int]int), l: make(map[int][]int)}
+	for i := 0; i < b.N; i++ {
+		go ab.Draw(1)
+	}
+}
+
+func BenchmarkAbTest1000000Goroutine(b *testing.B) {
+	ab := AbTest{r: 5, t: 1000000, c: make(map[int]int), l: make(map[int][]int)}
+	for i := 0; i < b.N; i++ {
+		go ab.Draw(1)
 	}
 }
