@@ -24,6 +24,14 @@ func TestInitList(t *testing.T) {
 	fmt.Println(initList(20, 10))
 }
 
+func BenchmarkUnSafeCounter(b *testing.B) {
+	sc := UnSafeCounter{v: make(map[int]int)}
+	for i := 0; i < b.N; i++ {
+		sc.Draw(1)
+	}
+}
+
+
 func BenchmarkSafeCounter(b *testing.B) {
 	sc := SafeCounter{v: make(map[int]int)}
 	for i := 0; i < b.N; i++ {

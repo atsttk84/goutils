@@ -6,6 +6,16 @@ import (
 	"time"
 )
 
+type UnSafeCounter struct {
+	v  map[int]int
+}
+
+func (c *UnSafeCounter) Draw(key int) (v int) {
+	c.v[key]++
+	v = c.v[key]
+	return
+}
+
 /*
  https://go.dev/tour/concurrency/9
 */
